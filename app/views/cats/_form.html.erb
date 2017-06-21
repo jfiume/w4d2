@@ -1,0 +1,38 @@
+<% _action = cat.id ? cat_url(cat) : cats_url %>
+<% _verb = cat.id ? "PATCH" : "POST" %>
+
+<form action="<%= _action %>" method="post">
+  <input type="hidden" name="_method" value="<%=_verb%>">
+  <label for="name">Name: </label>
+  <input id="name" type="text" name="cat[name]" value="<%= cat.name%>">
+  <br>
+  <label for="color">Color: </label>
+  <select name="cat[color]">
+    <option value="<%=cat.color%>" selected><%=cat.color%></option>
+    <option value="black">black</option>
+    <option value="white">white</option>
+    <option value="orange">orange</option>
+    <option value="tuxedo">tuxedo</option>
+    <option value="calico">calico</option>
+    <option value="grey">grey</option>
+    <option value="brown">brown</option>
+  </select>
+  <br>
+  <label for="sex">Sex:</label>
+  Male<input type="radio" name="cat[sex]" value="M" checked="<%=cat.sex == 'M'%>">
+  Female<input type="radio" name="cat[sex]" value="F" checked="<%=cat.sex == 'F'%>">
+  <br>
+  <label for="birth_date">Birth Date</label>
+  <input type="date" name="cat[birth_date]" value="<%=cat.birth_date%>">
+  <br>
+  <label for="description">description</label>
+  <textarea name="cat[description]">
+    <%= cat.description %>
+  </textarea>
+  <br>
+  <label for="img_url">img_url</label>
+  <input type="text" name="cat[img_url]" value="<%=cat.img_url%>">
+
+
+  <input type="submit" value="Submit Cat">
+</form>

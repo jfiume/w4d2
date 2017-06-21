@@ -1,0 +1,11 @@
+<ul>
+  <% @cat.each do |cat| %>
+    <li>
+      <img src=" <%= cat.img_url %>" alt=" <%= cat.name %>" width="10%" height="10%">
+      name: <%= link_to cat.name, cat_url(cat.id) %>
+      color: <%= cat.color %>
+      age: <%= cat.age %>
+      description: <%= cat.description %>
+    </li>
+  <% end %>
+</ul>

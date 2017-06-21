@@ -1,0 +1,27 @@
+<h1><%= @cat.name %>!</h1>
+
+<%= link_to "Edit Cat", edit_cat_url(@cat) %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td> <%= @cat.color %></td>
+      <td><%= @cat.age %></td>
+      <td><%= @cat.sex %></td>
+      <td><%= @cat.description %></td>
+    </tr>
+  </tbody>
+   <figure>
+     <img src=" <%= @cat.img_url %>" alt=" <%= @cat.name %>">
+     <figcaption><%= @cat.name %></figcaption>
+   </figure>
+</table>
